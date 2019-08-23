@@ -17,7 +17,6 @@ module.exports = {
   classNames : classNames
 }
 </wxs>
-
 <view class="indicator-container">
 <view class="indicator-positive" style="{{'flex:'+ (positive || 0) + ';'}}"></view>
 <view class="indicator-neutral" style="{{'flex:'+ (neutral || 0)  + ';'}}"></view>

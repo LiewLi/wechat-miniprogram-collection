@@ -143,5 +143,11 @@ Page({
   },
   onPrev: function(e) {
     this.refreshCalendar(e.detail)
+  },
+  onShareAppMessage: function(e) {
+    return {
+      title: 'iMoody心情日历',
+      path: 'pages/index/index'  
+    }
   }
 })

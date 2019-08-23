@@ -1,4 +1,6 @@
-
+page {
+  background-color: #ccd2de;
+}
 .indicator-container {
   display: flex;
   flex-direction: row;
@@ -62,7 +64,7 @@ background-color: #10aeff;
   display: block;
   width: 100%;
   text-align: center;
-  color: #8d8d8d;
+  color: #4e6085;
   margin: 0rpx 0rpx 20rpx 0rpx;
   font-size: 36rpx;
 }

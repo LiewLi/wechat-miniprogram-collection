@@ -75,6 +75,6 @@
 }
 
 .control-icon {
-  width: 64rpx;
-  height:64rpx;
+  width: 45rpx;
+  height:45rpx;
 }

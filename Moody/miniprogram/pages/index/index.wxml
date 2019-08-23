@@ -1,0 +1,40 @@
+
+<wxs module="util">
+function classNames(m, v) {
+    if (m === v) {
+      if (m > 0) {
+        return "item-positive"
+      } else if (m === 0) {
+        return "item-neutral"
+      } else if (m < 0){
+        return "item-negative"
+      } 
+    }
+    return 'item-none'
+}
+
+module.exports = {
+  classNames : classNames
+}
+</wxs>
+
+<view class="indicator-container">
+<view class="indicator-positive" style="{{'flex:'+ (positive || 0) + ';'}}"></view>
+<view class="indicator-neutral" style="{{'flex:'+ (neutral || 0)  + ';'}}"></view>
+<view class="indicator-negative" style="{{'flex:'+ (negative || 0)  + ';'}}"></view>
+</view>
+<calendar year="{{year}}" month="{{month}}" moods="{{moods}}" bindnext="onNext" bindprev="onPrev"></calendar>
+
+<text class="title">{{title}}</text>
+
+<view class="container">
+  <view class="{{'item ' + util.classNames(today, 1)}}" bindtap="onTapPositive">
+    <image src="../../images/smiling.png" class="icon"></image>
+  </view>
+  <view class="{{'item ' + util.classNames(today, 0)}}" bindtap="onTapNeutral">
+    <image src="../../images/neutral.png" class="icon"></image>
+  </view>
+  <view class="{{'item ' + util.classNames(today, -1)}}" bindtap="onTapNegative">
+    <image src="../../images/sad.png" class="icon"></image>
+  </view>
+</view>

@@ -1,0 +1,26 @@
+<wxs module="util">
+function classNames(op, idx, enabled){
+  if (enabled && op === idx) {
+    return "op-active"
+  } else {
+    return "op-deactive"
+  }
+}
+module.exports = {
+  classNames: classNames
+}
+</wxs>
+
+<view class="container">
+<canvas canvas-id="src" style="width: {{width}}px; height:{{height}}px;" class="item" bindtap="onSrc"></canvas>
+<text class="tips" wx:if="{{showtips}}">点击换图/保存</text>
+<canvas canvas-id="dst" style="width: {{width}}px; height:{{height}}px;" class="item" bindtap="onDst"></canvas>
+<scroll-view scroll-x class="filters">
+<view bindtap="onPosterize" class="op {{util.classNames(op, 1, !showtips)}}">海报</view>
+<view bindtap="onFlip" class="op {{util.classNames(op, 2, !showtips)}}">翻转</view>
+<view bindtap="onPixelate" class="op {{util.classNames(op, 3, !showtips)}}">像素</view>
+<view bindtap="onSepia" class="op {{util.classNames(op, 4, !showtips)}}">sepia</view>
+<view bindtap="onGrayScale" class="op {{util.classNames(op, 5, !showtips)}}">灰度</view>
+<view bindtap="onBW" class="op {{util.classNames(op, 6, !showtips)}}">黑白</view>
+</scroll-view>
+</view>

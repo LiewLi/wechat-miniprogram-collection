@@ -1,0 +1,43 @@
+<wxs module="util">
+function classNames(s, m) {
+    if (s == -1) {
+        return "item-hidden"
+    } else {
+        if (m > 0) {
+          return "item-positive"
+        } else if (m === 0) {
+          return "item-neutral"
+        } else if (m < 0){
+          return "item-negative"
+        } 
+    }
+    return "item-default"
+}
+module.exports = {
+  classNames : classNames,
+}
+</wxs>
+
+<view>
+<view class="header-container">
+<image src="./images/prev.png" class="header control-icon" bindtap="onPrev"></image>
+<view class="header">
+<view class="month"> {{month}} </view>
+<view class="year"> {{year}} </view>
+</view>
+<image src="./images/next.png" class="header control-icon" bindtap="onNext"></image>
+</view>
+<view class="container">
+    <block wx:for="{{weeks}}" wx:key="{{index}}">
+        <view class="week">
+            {{item}}
+        </view>
+    </block>
+    <block wx:for="{{vals}}" wx:key="{{index}}">
+        <view class="{{'item ' + util.classNames(item.s, item.m)}}">
+            <view class="day" bindtap="onDayTap" 
+            data-year="{{year}}" data-month="{{month}}" data-day="{{item.d}}">{{item.d}}</view>
+        </view>
+    </block>
+</view>
+</view>

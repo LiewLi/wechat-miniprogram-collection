@@ -1,0 +1,27 @@
+{
+    "name": "mp-calendar",
+    "author": "chrisll",
+    "height": 600,
+    "icon": "calendar.jpg",
+    "placeholder": "calendar.jpg",
+    "properties": [
+        {
+            "name": "year",
+            "readableName": "年",
+            "type": "Number",
+            "defaultValue": 2019
+        },
+        {
+            "name": "month",
+            "readableName": "月",
+            "type": "Number",
+            "defaultValue": 7
+        }
+    ],
+    "events": [
+        {
+            "name": "dateTap",
+            "readableName": "点击日期时"
+        }
+    ]
+}
